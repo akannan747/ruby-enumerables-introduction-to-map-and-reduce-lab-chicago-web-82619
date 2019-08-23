@@ -42,7 +42,7 @@ end
 def reduce_to_all_true(source_array)
   result = [] 
   source_array.length.times { |i|
-    result += source_array[i]
+    result.push(source_array[i]) if source_array[i] 
   }
   return result
 end
