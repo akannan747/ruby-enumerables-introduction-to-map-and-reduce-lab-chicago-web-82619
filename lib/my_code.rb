@@ -40,9 +40,19 @@ def reduce_to_total(source_array)
 end
 
 def reduce_to_all_true(source_array)
-  result = [] 
   source_array.length.times { |i|
-    result.push(source_array[i]) if source_array[i] 
+    if !source_array[i] 
+      return false 
+    end
   }
-  return result
+  return true
+end
+
+def reduce_to_any_true(source_array)
+  source_array.length.times { |i|
+    if source_array[i] 
+      return true 
+    end
+  }
+  return false
 end
